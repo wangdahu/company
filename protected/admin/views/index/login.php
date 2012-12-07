@@ -2,7 +2,7 @@
 $this->pageTitle=Yii::app()->name . ' - 管理员登陆';
 ?>
 <div class="form">
-    <?php $form=$this->beginWidget('CActiveForm', array('id'=>'login-form', 'enableAjaxValidation'=>true, 'enableClientValidation' => true,)); ?>
+    <?php $form=$this->beginWidget('CActiveForm', array('id'=>'login-form', 'enableAjaxValidation'=>true,)); ?>
 <div class="login_warp">
     <div class="row">
         <?php echo $form->labelEx($model, 'username'); ?>
