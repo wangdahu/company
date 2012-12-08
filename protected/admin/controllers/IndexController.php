@@ -1,5 +1,5 @@
 <?php
-class IndexController extends Controller {
+class IndexController extends AController {
 
     public $defaultAction = 'login';
     public $layout = 'column1';
