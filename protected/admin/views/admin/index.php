@@ -1,3 +1,8 @@
+<div>
+ 当前位置：<?php $this->widget('zii.widget.CBreadcrumbs', $this->breadcrumbs)); ?>
+ 当前位置：<?php // $this->widget('zii.widget.CBreadcrumbs', $this->breadcrumbs)); ?>
+</div>
+<div><?php echo CHtml::link(CHtml::button('新增'), $this->createUrl('create')); ?></div>
 <?php
 $this->widget('zii.widgets.grid.CGridView', array(
     'id' => 'admin-grid',
@@ -7,9 +12,12 @@ $this->widget('zii.widgets.grid.CGridView', array(
         'username',
         array(
             'name' => 'level',
-            'value' => 'Admin::getAdminLevel($data->level)',
+            'value' => 'Privilege::getAdminLevel($data->level)',
         ),
-        'logintime',
+        array(
+            'name' => 'logintime',
+            'type' => 'datetime',
+        ),
         array(
             'class' => 'CButtonColumn',
             'template' => '{update} {delete}'

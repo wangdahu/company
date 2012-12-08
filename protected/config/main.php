@@ -49,6 +49,10 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
+        'format' => array(
+            'class' => 'CFormmater',
+            'datetimeFormat' => 'Y-m-d H:i',
+        ),
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(

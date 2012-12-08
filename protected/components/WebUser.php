@@ -17,14 +17,14 @@ class WebUser extends CWebUser {
         return $this->_model;
     }
 
-    public function isAdmin() {
-        $model = $this->loadModel(Yii::app()->user->username);
-        return (boolean) $model['superuser'];
+    public function getLevel() {
+        $model = $this->loadModel(Yii::app()->user->id);
+        return $model['level'];
     }
 
-    public function getUsername() {
+    public function getUserName() {
         $model = $this->loadModel(Yii::app()->user->id);
-        return $model['email'];
+        return $model['username'];
     }
 
 }

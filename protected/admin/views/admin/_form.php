@@ -58,7 +58,7 @@
             <?php echo $form->labelEx($model, 'level'); ?>
         </div>
         <div class="textField">
-            <?php echo $form->dropdownList($model, 'level', Admin::getAdminLevel()); ?>
+            <?php echo $form->dropdownList($model, 'level', Privilege::getAdminLevel()); ?>
         </div>
         <?php echo $form->error($model, 'level'); ?>
     </div>

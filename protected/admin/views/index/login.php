@@ -18,7 +18,7 @@ $this->pageTitle=Yii::app()->name . ' - 管理员登陆';
             <?php echo $form->labelEx($model, 'password'); ?>
         </div>
         <div class="textField">
-            <?php echo $form->textField($model, 'password'); ?>
+            <?php echo $form->passwordField($model, 'password'); ?>
         </div>
         <?php echo $form->error($model, 'password'); ?>
     </div>

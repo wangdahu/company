@@ -114,22 +114,8 @@ class Admin extends CActiveRecord
 	 * @param string salt
 	 * @return string hash
 	 */
-	public function hashPassword($password)
-	{
+	public function hashPassword($password) {
 		return md5($password);
 	}
 
-    public static function getAdminLevel($level = null){
-        $levelList =  array(
-            '1' => '超级管理员',
-            '2' => '普通管理员',
-            '3' => '新闻发布者',
-        );
-        return $level ? $levelList[$level] : $levelList;
-    }
-
-    public function checkUpdate($data){
-        $this->addError('password','请输入正确的用户名和密码.');
-        return false;
-    }
 }

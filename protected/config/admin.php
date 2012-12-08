@@ -39,6 +39,10 @@ return array(
             'urlFormat' => 'get',
             'showScriptName' => true,
         ),
+        'format' => array(
+            'class' => 'CFormatter',
+            'datetimeFormat' => 'Y-m-d H:i',
+        ),
         // uncomment the following to use a MySQL database
         'db' => include dirname(__FILE__) . '/db.php',
         'log' => array(

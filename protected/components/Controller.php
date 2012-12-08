@@ -34,4 +34,10 @@ class Controller extends CController
 			Yii::app()->end();
 		}
 	}
+
+    public function redirect($url, $terminate=true, $statusCode=302){
+        parent::redirect($url, $terminate=true, $statusCode=302);
+        Yii::app()->end();
+    }
+
 }
