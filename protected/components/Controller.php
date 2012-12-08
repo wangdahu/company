@@ -20,4 +20,18 @@ class Controller extends CController
 	 * for more details on how to specify this property.
 	 */
 	public $breadcrumbs=array();
+
+    public function loadModel($model, $id){
+		$model = $model::model()->findByPk($id);
+		if($model===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+		return $model;
+	}
+
+    public function performAjaxValidation($model){
+		if(isset($_POST['ajax'])){
+			echo CActiveForm::validate($model);
+			Yii::app()->end();
+		}
+	}
 }

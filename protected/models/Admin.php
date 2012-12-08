@@ -39,6 +39,7 @@ class Admin extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('username, password', 'required'),
+			array('username', 'unique'),
 			array('logintime, level', 'numerical', 'integerOnly'=>true),
 			array('username', 'length', 'max'=>50),
 			array('password', 'length', 'max'=>32),
@@ -68,8 +69,11 @@ class Admin extends CActiveRecord
 			'id' => 'ID',
 			'username' => '用户名',
 			'password' => '密码',
-			'logintime' => 'Logintime',
-			'level' => 'Level',
+			'oldpassword' => '旧密码',
+			'newpassword' => '新密码',
+			'repeatpassword' => '确认密码',
+			'logintime' => '最后登陆时间',
+			'level' => '权限配置',
 		);
 	}
 
@@ -100,8 +104,7 @@ class Admin extends CActiveRecord
 	 * @param string the password to be validated
 	 * @return boolean whether the password is valid
 	 */
-	public function validatePassword($password)
-	{
+	public function validatePassword($password) {
 		return $this->hashPassword($password)===$this->password;
 	}
 
@@ -115,4 +118,18 @@ class Admin extends CActiveRecord
 	{
 		return md5($password);
 	}
+
+    public static function getAdminLevel($level = null){
+        $levelList =  array(
+            '1' => '超级管理员',
+            '2' => '普通管理员',
+            '3' => '新闻发布者',
+        );
+        return $level ? $levelList[$level] : $levelList;
+    }
+
+    public function checkUpdate($data){
+        $this->addError('password','请输入正确的用户名和密码.');
+        return false;
+    }
 }
