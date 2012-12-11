@@ -1,7 +1,3 @@
-<div>
- 当前位置：<?php $this->widget('zii.widget.CBreadcrumbs', $this->breadcrumbs)); ?>
- 当前位置：<?php // $this->widget('zii.widget.CBreadcrumbs', $this->breadcrumbs)); ?>
-</div>
 <div><?php echo CHtml::link(CHtml::button('新增'), $this->createUrl('create')); ?></div>
 <?php
 $this->widget('zii.widgets.grid.CGridView', array(

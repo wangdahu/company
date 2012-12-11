@@ -34,9 +34,9 @@
 		)); ?>
 	</div><!-- mainmenu -->
 
-	<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-		'links'=>$this->breadcrumbs,
-	)); ?><!-- breadcrumbs -->
+    <div >
+	<?php $this->widget('zii.widgets.CBreadcrumbs', $this->breadcrumbs); ?><!-- breadcrumbs -->
+    <div>
 
 	<?php echo $content; ?>
 

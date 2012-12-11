@@ -1,12 +1,8 @@
 <?php
 class AdminController extends AController {
 
-    public $layout = 'main';
-
     public function init(){
-        $this->breadcrumbs=array('links' => array('首页' => Yii::app()->createUrl('index')));
-        $this->breadcrumbs = array_push($this->breadcrumbs['links'], array('管理员' => $this->createUrl('index')));
-        echo "<pre>"; var_dump($this->breadcrumbs);exit;
+        $this->breadcrumbs['links']['管理员'] = $this->createUrl('index');
     }
 
     public function actionIndex(){
@@ -17,9 +13,8 @@ class AdminController extends AController {
     }
 
     public function actionUpdate($id){
-        $this->layout = '/main';
+        $this->breadcrumbs['links'][] = '新增管理员';
         $model=$this->loadModel('Admin', $id);
-        // Uncomment the following line if AJAX validation is needed
 
         if(isset($_POST['Admin'])){
             $model->password = $model->hashPassword($model->password);
@@ -32,7 +27,7 @@ class AdminController extends AController {
     }
 
     public function actionCreate(){
-        echo "<pre>"; var_dump($this->breadcrumbs);exit;
+        $this->breadcrumbs['links'][] = '新增管理员';
         $model = new Admin;
         $this->performAjaxValidation($model);
 
