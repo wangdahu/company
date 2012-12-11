@@ -31,8 +31,8 @@ class Editor extends CWidget{
         $script = $this->forceScript ? '' : '<div type="text/editor" id="'.$id.'"></div>';
 
         echo <<<HTML
-            $script
-            <script>
+$script
+<script>
             $(function(){
                     var name = '$id',
                         editor = new baidu.editor.ui.Editor($config);
@@ -56,8 +56,8 @@ class Editor extends CWidget{
                         document.getElementById(id).value = content;
                     }
                 });
-        </script>
-              HTML;
+</script>
+HTML;
         Yii::app()->clientScript->registerCssFile('/source/uediter/themes/default/ueditor.css');
         Yii::app()->clientScript->registerScriptFile('/source/uediter/editor_config.js');
         Yii::app()->clientScript->registerScriptFile('/source/uediter/editor_all_min.js');

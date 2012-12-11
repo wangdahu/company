@@ -6,7 +6,6 @@ class MessageboardController extends AController{
     }
 
     public function actionIndex(){
-
         $this->render('index', array());
     }
 }
