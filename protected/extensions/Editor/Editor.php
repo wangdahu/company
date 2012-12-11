@@ -58,5 +58,9 @@ class Editor extends CWidget{
                 });
         </script>
               HTML;
+        Yii::app()->clientScript->registerCssFile('/source/uediter/themes/default/ueditor.css');
+        Yii::app()->clientScript->registerScriptFile('/source/uediter/editor_config.js');
+        Yii::app()->clientScript->registerScriptFile('/source/uediter/editor_all_min.js');
+        Yii::app()->clientScript->registerScriptFile('/source/uediter/lang/zh-cn/zh-cn.js');
     }
 }
